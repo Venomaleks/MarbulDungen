@@ -278,7 +278,7 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
 
             x = y = 0;
 
-
+            // @Override
             cSurfaceView.setOnTouchListener(new OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -362,21 +362,14 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
 
                     } else if (dx < 0 && dy < 0) { // top vänster
 
-                        xx = (float) (joysitckx - (radius * Math.cos(angle)));
-                        yy = (float) (joysticky - (radius * Math.sin(angle)));
-
-
-                    } else { // annars ?
-
-                        xx = joysitckx + dx;
-                        yy = joysticky + dy;
-
+                            xx = (float) (joysitckx - (radius * Math.cos(angle)));
+                            yy = (float) (joysticky - (radius * Math.sin(angle)));
                     }
 
-                    // sätter så att positionen av fingret kommer att vissas av xx och yy
+                    // vad kullan får för rörelse yta om man har en touch utanför den animerade cirkeln
 
-                    x = xx;
-                    y = yy;
+                        x = xx + ((getWidth()/100)*9)/2;
+                        y = yy + ((getHeight()/100)*13)/2;
                 }
 
             }
@@ -398,12 +391,6 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
                 try {
 
                     canvas = mSurfaceHolder.lockCanvas(null);
-
-                    // joysticky = getWidth()/2;
-                    // zerox = getHeight()/20*19;
-
-                    // joysticky = (canvas.getHeight()/20)*19;
-
 
                     synchronized (mSurfaceHolder) {
 
