@@ -43,7 +43,7 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
     Paint dungenWall;
 
     // Laburintensväg max positoner (gämtemed X och Y axeln av hella skärmen)
-    float MinWidth, MaxWidth, MinHight, MaxHight;
+    float MinWidth, MaxWidth, MinHight, MaxHight;//~~ alla variabelnamn borde börja med liten bokstav
     //}
 
     // Animerad cirkel, balls ritade rörelse område{
@@ -133,7 +133,7 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
         //Färg
         animeradCirkel.setColor(Color.rgb(0,0,0));
         // cirkelns radie
-        radius = 125;
+        radius = 125;//~~ borde vara relativ till skärmens bredd eller höjd
         // cirkelns position på skärmen
 
         //}
@@ -221,7 +221,8 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
 
 
         // Kulans position på skärmen{
-        marbW = (getWidth()/100)*5;
+        marbW = (getWidth()/100)*5;//~~ kulan får bara en fixerad statisk position här.
+        //~~ Frågan är väl hur den ska röra sig? Det borde väl vara största prioritet imorgon att lösa det.
         marbH = (getHeight()/100)*5;
 
         canvas.drawBitmap(marb, marbW, marbH, null);
@@ -330,7 +331,8 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
 
 
                     // alla positoner som joysticken kan hamnapå i rörelse området
-
+//~~ Jag förstår inte uträkningen här , men det verkar som att det fungerar?
+                        //~~Nu rör sig väl joysticken inom cirkeln, som den ska?
                         if (dx > 0 && dy > 0) { // bot höger
 
                             xx = (float) (joysitckx + (radius * Math.cos(angle)));
