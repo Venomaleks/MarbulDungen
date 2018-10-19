@@ -384,6 +384,7 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
         @Override
         protected Void doInBackground(Void... voids) {
 
+            // vad som händer under run metoden skapas här
             while (run) {
 
                 Canvas canvas = null;
