@@ -483,24 +483,13 @@ public class cSurfaceView extends SurfaceView implements SurfaceHolder.Callback 
 
 
                     // alla positoner som joysticken kan hamnapå i rörelse området
-                        //~~ Jag förstår inte uträkningen här , men det verkar som att det fungerar? att du inte förstår vissar din intelegens.
+                        //~~ Jag förstår inte uträkningen här , men det verkar som att det fungerar?
                         //~~Nu rör sig väl joysticken inom cirkeln, som den ska?
 
                         if (dx > 0 && dy > 0) { // bot höger
 
                             xx = (float) (joysitckx + (radius * Math.cos(angle)));
                             yy = (float) (joysticky + (radius * Math.sin(angle)));
-
-                            Log.d("marbW ", "print1: :" + String.valueOf(marbW));
-                            Log.d("marbH ", "print1: :" + String.valueOf(marbH));
-
-                            Log.d("radius ", "printR: :" + String.valueOf(radius));
-
-                            Log.d("dx ", "printDX: :" + String.valueOf(dx));
-                            Log.d("dy ", "printDY: :" + String.valueOf(dy));
-
-                            Log.d("marbW2 ", "print2: :" + String.valueOf(marbW));
-                            Log.d("marbH2 ", "print2: :" + String.valueOf(marbH));
 
 
                     } else if (dx > 0 && dy < 0) { // top höger
